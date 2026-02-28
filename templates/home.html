@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FileGuard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="box">
+    <h1>FileGuard</h1>
+    <p>Digital Evidence Integrity Checker</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Select File</label>
+        <input type="file" name="file" required>
+
+        <label>Action</label>
+        <select name="action">
+            <option value="store">Store Evidence Hash</option>
+            <option value="verify">Verify Integrity</option>
+        </select>
+
+        <button type="submit">Process</button>
+    </form>
+
+    {% if message %}
+        <div class="result">{{ message }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
